@@ -81,6 +81,10 @@ void kbd(unsigned char key, int x, int y) {
             break;
         case '.': c.move(0,0, -5);
             break;
+        case 'y': c.rotate(0, PI / 100.0, 0);
+            break;
+        case 'z': c.rotate(0, 0, PI / 100.0);
+            break;
     }
     
     glutPostRedisplay();
