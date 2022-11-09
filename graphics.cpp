@@ -77,6 +77,10 @@ void kbd(unsigned char key, int x, int y) {
     switch(key) {
         case 'x': c.rotate(PI / 100.0, 0, 0);
             break;
+        case 'w': c.move(0, 0, -5);
+            break;
+        case 's': c.move(0,0, 5);
+            break;
     }
     
     glutPostRedisplay();
@@ -85,7 +89,7 @@ void kbd(unsigned char key, int x, int y) {
 void kbdS(int key, int x, int y) {
     switch(key) {
         case GLUT_KEY_DOWN:
-            
+            c.move(0, -5, 0);
             break;
         case GLUT_KEY_LEFT:
             c.move(-5, 0, 0);
@@ -94,7 +98,7 @@ void kbdS(int key, int x, int y) {
             c.move(5, 0, 0);
             break;
         case GLUT_KEY_UP:
-            
+            c.move(0, 5, 0);
             break;
     }
     
