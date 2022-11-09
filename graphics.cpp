@@ -85,9 +85,9 @@ void kbd(unsigned char key, int x, int y) {
             break;
         case 'z': c.rotate(0, 0, PI / 100.0);
             break;
-        case 'g': c.changeSize(0.1, 0.1);
+        case 'g': c.changeSize(1.1, 1.1, 1.1);
             break;
-        case 's': c.changeSize(0.1, 0.1);
+        case 's': c.changeSize(0.9, 0.9, 0.9);
             break;
     }
     
