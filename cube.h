@@ -35,7 +35,7 @@ public:
     void move(double delta_x, double delta_y, double delta_z);
 
     // Change size of the cube
-    void changeSize(double delta_x, double delta_y, double z_cof);
+    void changeSize(double cof);
 };
 
 

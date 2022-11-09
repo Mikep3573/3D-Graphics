@@ -75,19 +75,26 @@ void kbd(unsigned char key, int x, int y) {
     }
 
     switch(key) {
+        // Rotate with respect to the x-axis
         case 'x': c.rotate(PI / 100.0, 0, 0);
             break;
+        // Move in the positive z direction
         case ',': c.move(0, 0, 5);
             break;
+        // Move in the negative z direction
         case '.': c.move(0,0, -5);
             break;
+        // Rotate with respect to the y-axis
         case 'y': c.rotate(0, PI / 100.0, 0);
             break;
+        // Rotate with respect to the z-axis
         case 'z': c.rotate(0, 0, PI / 100.0);
             break;
-        case 'g': c.changeSize(1.1, 1.1, 1.1);
+        // Increase the size of the cube
+        case 'g': c.changeSize(1.1);
             break;
-        case 's': c.changeSize(0.9, 0.9, 0.9);
+        // Decrease the size of the cube
+        case 's': c.changeSize(0.9);
             break;
     }
     

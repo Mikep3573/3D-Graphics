@@ -35,7 +35,8 @@ Cube::Cube(point center, unsigned int edge_length) {
 
 void Cube::draw() const {
     glBegin(GL_QUADS);
-    
+
+    // Draw the faces with the top point being top-right and the rest following counter-clockwise (starts over every four coordinates)
     // Yellow
     glColor3f(1, 1, 0);
     draw_point(corners[0]);
@@ -137,10 +138,10 @@ void Cube::move(double delta_x, double delta_y, double delta_z) {
     }
 }
 
-void Cube::changeSize(double x_cof, double y_cof, double z_cof) {
-    for (point &p : corners) {
-        p.x *= x_cof;
-        p.y *= y_cof;
-        p.z *= z_cof;
-    }
+void Cube::changeSize(double cof) {
+    // Multiply the edge length by the new coefficient (will either be 1.1 or 0.9 to increase or shrink by 10%)
+    edge_length *= cof;
+
+    // Reset the corners with the new edge length
+    reset_corners();
 }
