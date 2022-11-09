@@ -33,6 +33,9 @@ public:
 
     // Move the cube
     void move(double delta_x, double delta_y, double delta_z);
+
+    // Change size of the cube
+    void changeSize(double delta_x, double delta_y);
 };
 
 

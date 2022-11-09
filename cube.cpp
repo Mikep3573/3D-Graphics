@@ -136,3 +136,14 @@ void Cube::move(double delta_x, double delta_y, double delta_z) {
         p.z += delta_z;
     }
 }
+
+void Cube::changeSize(double x_coefficient, double y_coefficient) {
+    double x_addend = center.x * x_coefficient;
+    double y_addend = center.y * y_coefficient;
+    center.x += x_addend;
+    center.y += y_addend;
+    for (point &p : corners) {
+        p.x += x_addend;
+        p.y *= y_addend;
+    }
+}
