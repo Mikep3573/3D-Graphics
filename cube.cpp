@@ -49,7 +49,35 @@ void Cube::draw() const {
     draw_point(corners[4]);
     draw_point(corners[6]);
     draw_point(corners[7]);
-    
+
+    // White
+    glColor3f(1, 1, 1);
+    draw_point(corners[4]);
+    draw_point(corners[0]);
+    draw_point(corners[2]);
+    draw_point(corners[6]);
+
+    // Cyan
+    glColor3f(0, 1, 1);
+    draw_point(corners[1]);
+    draw_point(corners[5]);
+    draw_point(corners[7]);
+    draw_point(corners[3]);
+
+    // Purple
+    glColor3f(0.627, 0.125, 0.941);
+    draw_point(corners[4]);
+    draw_point(corners[5]);
+    draw_point(corners[1]);
+    draw_point(corners[0]);
+
+    // Gray
+    glColor3f(0.5, 0.5, 0.5);
+    draw_point(corners[7]);
+    draw_point(corners[6]);
+    draw_point(corners[2]);
+    draw_point(corners[3]);
+
     glEnd();
 }
 
