@@ -77,9 +77,9 @@ void kbd(unsigned char key, int x, int y) {
     switch(key) {
         case 'x': c.rotate(PI / 100.0, 0, 0);
             break;
-        case 'w': c.move(0, 0, -5);
+        case ',': c.move(0, 0, 5);
             break;
-        case 's': c.move(0,0, 5);
+        case '.': c.move(0,0, -5);
             break;
     }
     
