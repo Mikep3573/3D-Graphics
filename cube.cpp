@@ -147,14 +147,7 @@ void Cube::changeSize(double cof) {
     move(-center_x, -center_y, -center_z);
 
     // Multiply the edge length by the new coefficient (will either be 1.1 or 0.9 to increase or shrink by 10%)
-//    for (point &p : corners) {
-//        old_x = p.x;
-//        old_y = p.y;
-//        old_z = p.z;
-//        p.x *= cof;
-//        p.y *= cof;
-//        p.z *= cof;
-//    }
+
 
     move(center_x, center_y, center_z);
 }
