@@ -91,10 +91,10 @@ void kbd(unsigned char key, int x, int y) {
         case 'z': c.rotate(0, 0, PI / 100.0);
             break;
         // Increase the size of the cube
-        case 'g': c.changeSize(1.1);
+        case 'g': c.changeSize(1.1, true);
             break;
         // Decrease the size of the cube
-        case 's': c.changeSize(0.9);
+        case 's': c.changeSize(1.1, false);
             break;
     }
     
@@ -104,15 +104,19 @@ void kbd(unsigned char key, int x, int y) {
 void kbdS(int key, int x, int y) {
     switch(key) {
         case GLUT_KEY_DOWN:
+            // Move in the negative y direction
             c.move(0, -5, 0);
             break;
         case GLUT_KEY_LEFT:
+            // Move in the negative x direction
             c.move(-5, 0, 0);
             break;
         case GLUT_KEY_RIGHT:
+            // Move in the positive x direction
             c.move(5, 0, 0);
             break;
         case GLUT_KEY_UP:
+            // Move in the positive y direction
             c.move(0, 5, 0);
             break;
     }

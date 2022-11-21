@@ -119,35 +119,38 @@ void Cube::rotate(double theta_x, double theta_y, double theta_z) {
 }
 
 void Cube::move(double delta_x, double delta_y, double delta_z) {
-    // Moving along the x-axis
+    // Move along any axis
     center.x += delta_x;
-    for (point &p : corners) {
-        p.x += delta_x;
-    }
-
-    // Moving along the y-axis
     center.y += delta_y;
-    for (point &p : corners) {
-        p.y += delta_y;
-    }
-
-    // Moving along the z-axis
     center.z += delta_z;
     for (point &p : corners) {
+        p.x += delta_x;
+        p.y += delta_y;
         p.z += delta_z;
     }
 }
 
-void Cube::changeSize(double cof) {
+void Cube::changeSize(double cof, bool expand) {
     // Initialize local variables
-    double old_x = 0, old_y = 0, old_z = 0;
     double center_x = center.x, center_y = center.y, center_z = center.z;
 
     // Move to origin
     move(-center_x, -center_y, -center_z);
 
     // Multiply the edge length by the new coefficient (will either be 1.1 or 0.9 to increase or shrink by 10%)
+    for (point &p : corners) {
+        if (expand) {
+            p.x *= cof;
+            p.y *= cof;
+            p.z *= cof;
+        }
+        else {
+            p.x /= cof;
+            p.y /= cof;
+            p.z /= cof;
+        }
+    }
 
-
+    // Move back to original position
     move(center_x, center_y, center_z);
 }
